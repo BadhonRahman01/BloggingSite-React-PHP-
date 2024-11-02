@@ -1,0 +1,9 @@
+{
+    "name": "blog/php",
+    "description": "blogsite with PHP and REACT",
+    "require": {
+        "slim/slim": "^4.14",
+        "php-di/php-di": "^7.0",
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
