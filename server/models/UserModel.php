@@ -1,5 +1,5 @@
 <?php
-namespace App\Models;
+namespace App;
 
 class UserModel {
     private $pdo;

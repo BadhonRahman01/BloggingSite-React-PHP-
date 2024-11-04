@@ -51,6 +51,10 @@ class ComposerStaticInit214dfad4d85a0d90dec6e08a8d50d87e
             'Dotenv\\' => 7,
             'DI\\' => 3,
         ),
+        'A' => 
+        array (
+            'App\\' => 4,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -115,6 +119,10 @@ class ComposerStaticInit214dfad4d85a0d90dec6e08a8d50d87e
         'DI\\' => 
         array (
             0 => __DIR__ . '/..' . '/php-di/php-di/src',
+        ),
+        'App\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/models',
         ),
     );
 
