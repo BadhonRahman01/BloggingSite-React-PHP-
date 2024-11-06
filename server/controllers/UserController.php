@@ -1,12 +1,13 @@
 <?php
 namespace App\Controllers;
 
-use App\UserModel;
+use App\Models\UserModel;
+use PDO;
 
 class UserController {
     private $userModel;
 
-    public function __construct($pdo) {
+    public function __construct(PDO $pdo) {
         $this->userModel = new UserModel($pdo);
     }
 

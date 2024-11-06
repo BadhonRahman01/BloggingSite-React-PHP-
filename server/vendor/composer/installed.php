@@ -3,7 +3,7 @@
         'name' => 'blog/php',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => 'a67a1a0830f9b945c21c5585d51e4dc560daf34a',
+        'reference' => '7a489f3b95355b88ac43b4d66646673288482783',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'blog/php' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => 'a67a1a0830f9b945c21c5585d51e4dc560daf34a',
+            'reference' => '7a489f3b95355b88ac43b4d66646673288482783',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

@@ -1,12 +1,13 @@
 <?php
 namespace App\Controllers;
 
-use App\CommentModel;
+use App\Models\CommentModel;
+use PDO;
 
 class CommentController {
     private $commentModel;
 
-    public function __construct($pdo) {
+    public function __construct(PDO $pdo) {
         $this->commentModel = new CommentModel($pdo);
     }
 

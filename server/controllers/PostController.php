@@ -1,12 +1,13 @@
 <?php
 namespace App\Controllers;
 
-use App\PostModel;
+use App\Models\PostModel;
+use PDO;
 
 class PostController {
     private $postModel;
 
-    public function __construct($pdo) {
+    public function __construct(PDO $pdo) {
         $this->postModel = new PostModel($pdo);
     }
 
