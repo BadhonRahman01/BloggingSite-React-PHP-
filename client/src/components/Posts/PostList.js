@@ -43,7 +43,7 @@ const PostList = () => {
   const handleEdit = (post) => setSelectedPost(post);
 
   return (
-    <div className="post-list-container">
+    <div className="posts-page-container">
       <h2>Post List</h2>
       {loading ? (
         <p>Loading...</p>
@@ -68,7 +68,9 @@ const PostList = () => {
           </ul>
         </>
       )}
-      <PostForm addPost={addPost} updatePost={updatePost} selectedPost={selectedPost} />
+      <div className="post-form-container">
+        <PostForm addPost={addPost} updatePost={updatePost} selectedPost={selectedPost} />
+      </div>
     </div>
   );
 };
