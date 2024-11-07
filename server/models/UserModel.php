@@ -20,6 +20,12 @@ class UserModel {
         return $stmt->execute();
     }
 
+    public function getAllUsers() {
+        $sql = "SELECT * FROM users";
+        $stmt = $this->pdo->query($sql);
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
     public function getUserById($userId) {
         $sql = "SELECT * FROM users WHERE user_id = :user_id";
         $stmt = $this->pdo->prepare($sql);

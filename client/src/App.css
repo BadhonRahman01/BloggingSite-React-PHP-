@@ -36,3 +36,141 @@
     transform: rotate(360deg);
   }
 }
+
+/* App.css */
+
+.home-container {
+  text-align: center;
+  padding: 50px;
+}
+
+.home-header {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.home-subtext {
+  font-size: 1.2rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+.home-linkContainer {
+  margin-top: 30px;
+}
+
+.home-linkButton {
+  display: inline-block;
+  margin: 0 15px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007bff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+
+/* App.css */
+
+.posts-container {
+  padding: 20px;
+}
+
+.post-container {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.comment-list {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.comment-item {
+  background-color: #f9f9f9;
+  padding: 8px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+/* App.css */
+
+.users-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.user-form {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-input {
+  margin: 5px 0;
+  padding: 10px;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+.user-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #28a745;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.user-button:hover {
+  background-color: #218838;
+}
+
+.user-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.user-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.user-editButton, .user-deleteButton {
+  margin-left: 5px;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.user-editButton {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.user-deleteButton {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.user-editButton:hover {
+  background-color: #0056b3;
+}
+
+.user-deleteButton:hover {
+  background-color: #c82333;
+}

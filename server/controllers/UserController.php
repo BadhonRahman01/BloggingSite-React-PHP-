@@ -20,6 +20,15 @@ class UserController {
         }
     }
 
+    public function getAllUsers() {
+        $users = $this->userModel->getAllUsers();
+        if ($users) {
+            echo json_encode(['status' => 'success', 'data' => $users]);
+        } else {
+            echo json_encode(['status' => 'error', 'message' => 'No users found']);
+        }
+    }
+
     public function createUser($data) {
         $result = $this->userModel->createUser($data['username'], $data['password'], $data['email'], $data['display_name']);
         if ($result) {
