@@ -12,7 +12,15 @@ class Router {
     public function post($path, $callback) {
         $this->addRoute('POST', $path, $callback);
     }
+    // Register PUT route
+    public function put($path, $callback) {
+        $this->addRoute('PUT', $path, $callback);
+    }
 
+    // Register DELETE route
+    public function delete($path, $callback) {
+        $this->addRoute('DELETE', $path, $callback);
+    }
     //for adding routes to the routes array
     private function addRoute($method, $path, $callback) {
         $this->routes[] = ['method' => $method, 'path' => $path, 'callback' => $callback];

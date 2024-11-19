@@ -37,4 +37,21 @@ class UserController {
             echo json_encode(['status' => 'error', 'message' => 'Failed to create user']);
         }
     }
+    public function updateUser($id, $data) {
+        $result = $this->userModel->updateUser($id, $data['username'], $data['password'], $data['email'], $data['display_name'], $data['role']);
+        if ($result) {
+            echo json_encode(['status' => 'success', 'message' => 'User updated successfully']);
+        } else {
+            echo json_encode(['status' => 'error', 'message' => 'Failed to update user']);
+        }
+    }
+
+    public function deleteUser($id) {
+        $result = $this->userModel->deleteUser($id);
+        if ($result) {
+            echo json_encode(['status' => 'success', 'message' => 'User deleted successfully']);
+        } else {
+            echo json_encode(['status' => 'error', 'message' => 'Failed to delete user']);
+        }
+    }
 }

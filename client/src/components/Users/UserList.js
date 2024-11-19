@@ -7,7 +7,7 @@ import '../../App.css';
 const UserList = () => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
-//   const [selectedUser, setSelectedUser] = useState(null);
+  const [selectedUser, setSelectedUser] = useState(null);
 
 useEffect(() => {
     const fetchUsers = async () => {
@@ -25,33 +25,33 @@ useEffect(() => {
     fetchUsers();
 }, []);
 
-//   const addUser = async (user) => {
-//     try {
-//       const response = await userAPI.addUser(user);
-//       setUsers([...users, response.data]);
-//     } catch (error) {
-//       console.error("Error adding user:", error);
-//     }
-//   };
+  const addUser = async (user) => {
+    try {
+      const response = await userAPI.addUser(user);
+      setUsers([...users, response.data]);
+    } catch (error) {
+      console.error("Error adding user:", error);
+    }
+  };
 
-//   const updateUser = async (updatedUser) => {
-//     try {
-//       const response = await userAPI.updateUser(updatedUser);
-//       setUsers(users.map((user) => (user.user_id === response.data.user_id ? response.data : user)));
-//       setSelectedUser(null);
-//     } catch (error) {
-//       console.error("Error updating user:", error);
-//     }
-//   };
+  const updateUser = async (updatedUser) => {
+    try {
+      const response = await userAPI.updateUser(updatedUser);
+      setUsers(users.map((user) => (user.user_id === response.data.user_id ? response.data : user)));
+      setSelectedUser(null);
+    } catch (error) {
+      console.error("Error updating user:", error);
+    }
+  };
 
-//   const deleteUser = async (id) => {
-//     try {
-//       await userAPI.deleteUser(id);
-//       setUsers(users.filter((user) => user.user_id !== id));
-//     } catch (error) {
-//       console.error("Error deleting user:", error);
-//     }
-//   };
+  const deleteUser = async (id) => {
+    try {
+      await userAPI.deleteUser(id);
+      setUsers(users.filter((user) => user.user_id !== id));
+    } catch (error) {
+      console.error("Error deleting user:", error);
+    }
+  };
 
   return (
     <div className="user-list-container">
@@ -64,8 +64,8 @@ useEffect(() => {
             users.map((user) => (
               <li key={user.user_id} className="user-item">
                 <p>{user.username} {user.email} ({user.display_name}) - {user.role}</p>
-                {/* <button onClick={() => setSelectedUser(user)} className="user-editButton">Edit</button>
-                <button onClick={() => deleteUser(user.user_id)} className="user-deleteButton">Delete</button> */}
+                <button onClick={() => setSelectedUser(user)} className="user-editButton">Edit</button>
+                <button onClick={() => deleteUser(user.user_id)} className="user-deleteButton">Delete</button>
               </li>
             ))
           ) : (
@@ -73,7 +73,7 @@ useEffect(() => {
           )}
         </ul>
       )}
-      {/* <UserForm addUser={addUser} updateUser={updateUser} selectedUser={selectedUser} /> */}
+      <UserForm addUser={addUser} updateUser={updateUser} selectedUser={selectedUser} />
     </div>
   );
 };
