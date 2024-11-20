@@ -58,17 +58,11 @@ class UserModel {
         }
     }
     
-    public function deleteUser($id)
-    {
-        $query = "DELETE FROM users WHERE user_id = :id";
-        $stmt = $this->pdo->prepare($query);
-        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-    
-        if ($stmt->execute()) {
-            echo json_encode(['status' => 'success', 'message' => 'User deleted successfully']);
-        } else {
-            echo json_encode(['status' => 'error', 'message' => 'Failed to delete user']);
-        }
+    public function deleteUser($userId) {
+        $sql = "DELETE FROM users WHERE user_id = :user_id";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':user_id', $userId, \PDO::PARAM_INT); // Use \PDO for constant
+        return $stmt->execute();
     }
     
 }

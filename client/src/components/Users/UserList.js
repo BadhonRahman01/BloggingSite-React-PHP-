@@ -25,14 +25,15 @@ useEffect(() => {
     fetchUsers();
 }, []);
 
-  const addUser = async (user) => {
-    try {
-      const response = await userAPI.addUser(user);
-      setUsers([...users, response.data]);
-    } catch (error) {
-      console.error("Error adding user:", error);
-    }
-  };
+const addUser = async (user) => {
+  try {
+    const response = await userAPI.addUser(user);
+    setUsers((prevUsers) => [...prevUsers, response.data]); 
+  } catch (error) {
+    console.error("Error adding user:", error);
+  }
+};
+
 
   const updateUser = async (updatedUser) => {
     try {

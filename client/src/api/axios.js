@@ -9,7 +9,7 @@ const API = axios.create({
 export const userAPI = {
   getAllUsers: () => API.get('/users'),
   getUserById: (id) => API.get(`/users/${id}`),
-  addUser: (data) => API.post(`/users`, data), // Ensure this exists
+  addUser: (data) => API.post(`/users`, data), 
   updateUser: (id, userData) => API.put(`/users/${id}`, userData),
   deleteUser: (id) => API.delete(`/users/${id}`),
 };
