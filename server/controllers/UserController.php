@@ -31,10 +31,21 @@ class UserController {
 
     public function createUser($data) {
         $result = $this->userModel->createUser($data['username'], $data['password'], $data['email'], $data['display_name']);
+
         if ($result) {
-            echo json_encode(['status' => 'success', 'message' => 'User created successfully']);
+            // Fix: Access PDO instance from UserModel
+            $newUserId = $this->userModel->pdo->lastInsertId();  // Correct way
+            $newUser = $this->userModel->getUserById($newUserId);
+    
+            echo json_encode([
+                'status' => 'success',
+                'data' => $newUser
+            ]);
         } else {
-            echo json_encode(['status' => 'error', 'message' => 'Failed to create user']);
+            echo json_encode([
+                'status' => 'error',
+                'message' => 'Failed to create user'
+            ]);
         }
     }
     public function updateUser($id, $data) {
